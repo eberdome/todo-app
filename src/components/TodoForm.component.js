@@ -30,10 +30,10 @@ const TodoForm = (props) => {
 
     return (
         <div>
-            <h3 style={{ marginBottom: '40px' }}>Thanksgiving Dinner List</h3>
+            <h4 style={{ marginBottom: '40px' }}>Todo Application</h4>
             <Form onSubmit={handleSubmit}>
                 <Form.Group controlId="new-todo">
-                    <Form.Control type="text" placeholder="What do we need?" id="new-todo" onChange={handleChange} value={text} />
+                    <Form.Control type="text" placeholder="What do we need to do?" id="new-todo" onChange={handleChange} value={text} />
                 </Form.Group>
                 <Button variant="primary" type="submit">
                     Add Item
