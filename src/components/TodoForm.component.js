@@ -33,7 +33,7 @@ const TodoForm = (props) => {
             <h4 style={{ marginBottom: '40px' }}>Todo Application</h4>
             <Form onSubmit={handleSubmit} autoComplete="45t135gqbetb">
                 <Form.Group>
-                    <Form.Control type="text" placeholder="What do we need to do?" id="new-todo" onChange={handleChange} value={text} />
+                    <Form.Control type="text" placeholder="What do we need to do?" onChange={handleChange} value={text} />
                 </Form.Group>
                 <Button variant="primary" type="submit">
                     Add Item
