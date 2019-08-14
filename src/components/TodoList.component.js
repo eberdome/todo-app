@@ -6,7 +6,7 @@ const TodoList = (props) => {
     return (
         <ListGroup variant="flush">
             {items.map((item, index) => (
-                <ListGroup.Item key={index} style={{textTransform: 'capitalize'}}>{item.text}</ListGroup.Item>
+                <ListGroup.Item key={index} style={{textTransform: 'capitalize'}}>{index + 1}. {item.text}</ListGroup.Item>
             ))}
         </ListGroup>
     );

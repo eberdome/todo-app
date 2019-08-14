@@ -2,31 +2,28 @@ import React from 'react';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 
-
-
 const TodoForm = (props) => {
 
+    // object destructuring
+    const { text, setText, items, setItems } = props;
+
     // handle our change event
-    const handleChange = (e) => {
-        props.setText(e.target.value);
+    const handleChange = (event) => {
+        setText(event.target.value);
     }
 
-    // This will run when we click the "Add Item" button
-    const handleSubmit = (e) => {
-        e.preventDefault();
-        if (!props.text.length) {
+    // This will run when we submit the form
+    const handleSubmit = (event) => {
+        event.preventDefault();
+        if (!text.length) {
             return;
         }
         const newItem = {
-            text: props.text
+            text: text
         };
-        props.setItems(props.items.concat(newItem));
-        props.setText('');
+        setItems([...items, newItem]);
+        setText('');
     }
-
-    // object destructuring so we dont have to prepend "props" all the time
-    // writing {items} is quicker than {props.items}
-    const { text } = props;
 
     return (
         <div>
@@ -36,7 +33,7 @@ const TodoForm = (props) => {
                     <Form.Control type="text" placeholder="What do we need to do?" onChange={handleChange} value={text} />
                 </Form.Group>
                 <Button variant="primary" type="submit">
-                    Add Item
+                    Add to List
                 </Button>
             </Form>
         </div>
