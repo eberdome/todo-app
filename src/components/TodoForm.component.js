@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useCallback } from 'react';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 
@@ -7,23 +7,23 @@ const TodoForm = (props) => {
     // object destructuring
     const { text, setText, items, setItems } = props;
 
-    // our change handler function
-    const handleChange = (event) => {
+    // our change event handler function
+    const handleChange = useCallback((event) => {
         setText(event.target.value);
-    }
+    }, [setText]);
 
-    // our submit handler function
-    const handleSubmit = (event) => {
+    // our submit event handler function
+    const handleSubmit = useCallback((event) => {
         event.preventDefault();
-        if (!text.length) {
-            return;
-        }
+
+        if (!text.length) return;
+
         const newItem = {
             text: text
         };
         setItems([...items, newItem]);
         setText('');
-    }
+    }, [items, setItems, text, setText]);
 
     return (
         <>
