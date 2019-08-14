@@ -2,7 +2,9 @@ import React from 'react';
 import ListGroup from 'react-bootstrap/ListGroup';
 
 const TodoList = (props) => {
+    // object destructuring
     const { items } = props;
+    
     return (
         <ListGroup variant="flush">
             {items.map((item, index) => (

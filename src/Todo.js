@@ -7,6 +7,8 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 
 const Todo = () => {
+  // The useState hook. Creating a getter and setter using array destructuring
+  // The useState hook argument is the default value
   const [items, setItems] = useState([]);
   const [text, setText] = useState('');
 
@@ -18,7 +20,7 @@ const Todo = () => {
             <TodoForm text={text} setText={setText} items={items} setItems={setItems} />
           </Col>
           <Col>
-            <TodoList text={text} setText={setText} items={items} setItems={setItems} />
+            <TodoList items={items} />
           </Col>
         </Row>
       </Container>

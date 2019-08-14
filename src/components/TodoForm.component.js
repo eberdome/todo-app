@@ -7,12 +7,12 @@ const TodoForm = (props) => {
     // object destructuring
     const { text, setText, items, setItems } = props;
 
-    // handle our change event
+    // our change handler function
     const handleChange = (event) => {
         setText(event.target.value);
     }
 
-    // This will run when we submit the form
+    // our submit handler function
     const handleSubmit = (event) => {
         event.preventDefault();
         if (!text.length) {
@@ -26,7 +26,7 @@ const TodoForm = (props) => {
     }
 
     return (
-        <div>
+        <>
             <h4 style={{ marginBottom: '40px' }}>Todo Application</h4>
             <Form onSubmit={handleSubmit} autoComplete="45t135gqbetb">
                 <Form.Group>
@@ -36,7 +36,7 @@ const TodoForm = (props) => {
                     Add to List
                 </Button>
             </Form>
-        </div>
+        </>
     );
 }
 
